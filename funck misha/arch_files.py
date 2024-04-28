@@ -8,6 +8,6 @@ def arch_files(files, name_of_new_archive):
             shutil.move(file, os.path.join(name_of_new_archive, os.path.basename(file)))
         shutil.make_archive(name_of_new_archive, 'zip', name_of_new_archive)
         shutil.rmtree(name_of_new_archive)
-        print("yest archiv")
+        print(f"{name_of_new_archive}.zip успешно создан")
     except:
-        print("net archiva")
+        print("Ошибка при создании архива.")
