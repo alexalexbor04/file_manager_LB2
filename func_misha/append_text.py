@@ -6,6 +6,6 @@ def append_text(name, text):
             if file.tell() > 0:
                 file.write('\n')
             file.write(text)
-            print(f'Добавление текста в файл\n...\n...\nГотово.')    
+            print("\033[32m{}" .format(f'Добавление текста в файл\n...\n...\nГотово.'))    
     else:
-        print(f'Указанный файл не существует')
+        print("\033[31m{}" .format(f'Указанного файла не существует'))

@@ -3,8 +3,8 @@ import os
 def del_folder(name):
     try:
         os.rmdir(name)
-        print(f'Папка удалена')
+        print("\033[32m{}" .format('Папка удалена'))
     except FileNotFoundError:
-        print(f'Папки не существует')
+        print("\033[31m{}" .format('Указанная папка не найдена'))
     except OSError:
-        print(f'Не удалось удалить папку так как в ней ест файлы, удалите сначала их')
+        print("\033[31m{}" .format('Не удалось удалить папку так как в ней ест файлы, удалите сначала их'))

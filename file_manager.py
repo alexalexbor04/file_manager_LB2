@@ -21,7 +21,7 @@ def main():
     folder_configuration(folder)
 
     while True:
-        print('\n0 - Завершить работу')
+        print("\n\033[37m{}" .format("0 - Завершить работу"))
         print('1 - Создать папку')
         print('2 - Удалить папку')
         print('3 - Переместиться между папками')
