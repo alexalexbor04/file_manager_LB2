@@ -48,15 +48,15 @@ def main():
                 break
 
             case 1:
-                dir_name = input('Введите название папки: ')
+                dir_name = input('Введите название папки для создания: ')
                 make_folder(os.path.join(folder, dir_name))
 
             case 2:
-                dir_name = input('Введите название папки: ')
+                dir_name = input('Введите название папки, которую хотите удалить: ')
                 del_folder(os.path.join(folder, dir_name))
 
             case 3:
-                dir_name = input('Введите название папки: ')
+                dir_name = input('Введите название папки, в которую хотите переместиться: ')
 
                 if dir_name == '':
                     folder = 'root_folder'
@@ -79,7 +79,7 @@ def main():
                 make_file(file_name)
 
             case 5:
-                file_name = input('Введите название файла: ')
+                file_name = input('Введите название файла для записи текста: ')
                 text = input('Введите текст для добавления: ')
                 append_text(os.path.join(folder, file_name), text)
 
@@ -110,7 +110,8 @@ def main():
                 prev_name = input('Введите текущее имя файла: ')
                 next_name = input('Введите новое имя файла: ')
                 rename_file(os.path.join(folder, prev_name), os.path.join(folder, next_name))
+            
+            case 11:
+                
 
-
-if __name__ == "__main__":
-    main()
+main()
