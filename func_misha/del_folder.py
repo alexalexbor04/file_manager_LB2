@@ -5,6 +5,6 @@ def del_folder(name):
         os.rmdir(name)
         print(f'Папка удалена')
     except FileNotFoundError:
-        print(f'Папка не существует')
+        print(f'Папки не существует')
     except OSError:
         print(f'Не удалось удалить папку так как в ней ест файлы, удалите сначала их')

@@ -95,17 +95,15 @@ def main():
             case 8:
                 dir1 = input('Введите путь к исходной папке, где лежит файл: ')
                 dir2 = input('Введите путь к папке, куда нужно скопировать данный файл: ')
-                files = input('Введите название файлов через запятую: ').split(',')
-                files = [os.path.join(folder, file) for file in files]
+                files = input('Введите название файлов через запятую: ').split(', ')
                 files_copying(os.path.join(folder, dir1), os.path.join(folder, dir2), files)
 
             case 9:
                 prev_dir = input('Введите путь к исходной папке, где лежит файл: ')
                 next_dir = input('Введите путь к папке, куда необходмо переместить файл: ')
-                files = input('Введите название файлов через запятую: ').split(',')
+                files = input('Введите название файлов через запятую: ').split(', ')
                 for file in files:
                     os.path.join(folder, file)
-                # files = [ for file in files]
                 move_files_from_one_folder_to_another(os.path.join(folder, prev_dir), os.path.join(folder, next_dir), files)
 
             case 10:
