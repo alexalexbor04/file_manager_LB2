@@ -16,7 +16,7 @@ from sasha_funcs.rename_file import rename_file
 
 
 def main():
-    print('Меню (от 0 до 10):')
+    print('Меню (от 0 до 13):')
     folder = 'root_folder'
     folder_configuration(folder)
 
@@ -38,7 +38,7 @@ def main():
         print(f'\nВаше текущее положение - папка {folder}\n')
 
         opt = int(input('Выберите положение меню: '))
-        while opt > 10 or opt < 0:
+        while opt > 13 or opt < 0:
             opt = int(input('Выберите положение меню: '))
 
 
@@ -102,8 +102,7 @@ def main():
                 prev_dir = input('Введите путь к исходной папке, где лежит файл: ')
                 next_dir = input('Введите путь к папке, куда необходмо переместить файл: ')
                 files = input('Введите название файлов через запятую: ').split(', ')
-                for file in files:
-                    os.path.join(folder, file)
+                files = [os.path.join(folder, file) for file in files]
                 move_files_from_one_folder_to_another(os.path.join(folder, prev_dir), os.path.join(folder, next_dir), files)
 
             case 10:
@@ -112,6 +111,17 @@ def main():
                 rename_file(os.path.join(folder, prev_name), os.path.join(folder, next_name))
             
             case 11:
-                
+                files_arch = input('Введите название файлов, которые хотите добавить в архив, через запятую: ').split(', ')
+                # files_arch = [os.path.join(folder, file) for file in files_arch]
+                arch_name = input('Введите название архива: ') 
+                arch_files(files_arch, os.path.join(folder, arch_name), folder)
+
+            case 12:
+                unarch = input('Введите название архива: ')
+                dest = input('Введите название папки для разархивации: ')
+                unarchive_file(unarch, dest)
+
+            case 13:
+                disk_space()           
 
 main()
