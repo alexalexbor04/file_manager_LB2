@@ -112,14 +112,13 @@ def main():
             
             case 11:
                 files_arch = input('Введите название файлов, которые хотите добавить в архив, через запятую: ').split(', ')
-                # files_arch = [os.path.join(folder, file) for file in files_arch]
                 arch_name = input('Введите название архива: ') 
                 arch_files(files_arch, os.path.join(folder, arch_name), folder)
 
             case 12:
                 unarch = input('Введите название архива: ')
                 dest = input('Введите название папки для разархивации: ')
-                unarchive_file(unarch, dest)
+                unarchive_file(os.path.join(folder, unarch), os.path.join(folder, dest))
 
             case 13:
                 disk_space()           

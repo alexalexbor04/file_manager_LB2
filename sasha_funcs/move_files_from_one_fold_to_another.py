@@ -9,7 +9,6 @@ def move_files_from_one_folder_to_another(first_dir, second_dir, files):
 
     for file in files:
         moving_path = os.path.join(first_dir, file)
-        print(first_dir, file)
 
         if os.path.isfile(moving_path):
             shutil.move(moving_path, second_dir)
